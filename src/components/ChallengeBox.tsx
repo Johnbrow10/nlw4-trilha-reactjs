@@ -2,6 +2,7 @@ import styles from '../styles/components/ChallengeBox.module.css';
 
 function ChallengeBox() {
 
+
     const hasActiveChallenge = true;
 
     return (
@@ -47,4 +48,4 @@ function ChallengeBox() {
     )
 }
 
-export { ChallengeBox }
+export { ChallengeBox };
