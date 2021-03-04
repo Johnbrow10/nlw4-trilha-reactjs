@@ -13,6 +13,7 @@ interface ChallengesContextData {
     level: number;
     currentExperience: number;
     challengesCompleted: number;
+    experienceToNextLevel: number;
     levelUp: () => void;
     startNewChallenge: () => void;
     activeChallenges: Challenge;
@@ -33,6 +34,11 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
 
     const [activeChallenges, setActiveChallenges] = useState(null)
 
+
+
+    // calculo para adquirir experiencia ao completar ou falhar no desafio
+
+    const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
     function levelUp() {
         setLevel(level + 1)
@@ -59,6 +65,7 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
                     level,
                     currentExperience,
                     challengesCompleted,
+                    experienceToNextLevel,
                     levelUp,
                     startNewChallenge,
                     activeChallenges,
